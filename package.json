@@ -15,6 +15,7 @@
     ],
     "scripts": {
         "build": "tsc",
+        "watch": "tsc --watch",
         "prepare": "rm -rf ./dist && tsc"
     },
     "repository": {
@@ -24,13 +25,17 @@
     "author": "Avail",
     "license": "ISC",
     "devDependencies": {
+        "@types/node": "^14.14.7",
+        "@types/pino": "^6.3.3",
         "typescript": "3.7.4",
         "husky": "^4.3.0",
         "lint-staged": "^10.4.2",
+        "pino-pretty": "^3.6.0",
         "prettier": "^2.1.2"
     },
     "dependencies": {
-        "@types/node": "^14.14.7",
+        "correlation-id": "^3.1.1",
+        "pino": "^6.7.0",
         "rxjs": "^6.6.3"
     }
 }

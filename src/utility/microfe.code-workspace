@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "path": "../.."
+        },
+        {
+            "path": "../../../bookings"
+        },
+        {
+            "path": "../../../shell"
+        },
+        {
+            "path": "../../../navigation"
+        },
+        {
+            "path": "../../../consumer-data-enrichment"
+        }
+    ]
+}
