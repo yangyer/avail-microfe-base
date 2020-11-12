@@ -1,0 +1,9 @@
+# Mac
+.DS_Store
+
+# Editors
+.editorconfig
+.vscode
+
+node_modules
+dist

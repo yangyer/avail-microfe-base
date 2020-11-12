@@ -1,0 +1,36 @@
+{
+    "name": "avail-microfe-base",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index",
+    "typings": "dist/index",
+    "files": [
+        "dist/index.js",
+        "dist/index.d.ts",
+        "dist"
+    ],
+    "keywords": [
+        "avail-project",
+        "library"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "prepare": "rm -rf ./dist && tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.goavail.net:avail-app-libraries/avail-microfe-base.git"
+    },
+    "author": "Avail",
+    "license": "ISC",
+    "devDependencies": {
+        "typescript": "3.7.4",
+        "husky": "^4.3.0",
+        "lint-staged": "^10.4.2",
+        "prettier": "^2.1.2"
+    },
+    "dependencies": {
+        "@types/node": "^14.14.7",
+        "rxjs": "^6.6.3"
+    }
+}
