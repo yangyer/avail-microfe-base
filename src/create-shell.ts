@@ -41,8 +41,8 @@ export const createShell = (config: MicrofrontendConfiguration, logger: Logger, 
         logger.info(`[shell] fetching manifest from ${data.url}`)
         const res = await fetch(data.url)
         const manifest = await res.json()
-
-        logger.trace(`[shell] creating script element and mounting script`)
+        logger.trace(`[shell] manifest = ${JSON.stringify(manifest, null, '\t')}`)
+        logger.trace(`[shell] creating script element and mounting script '${manifest.files['main.js']}'`)
         const script = rootDocument.createElement('script')
 
         script.id = scriptId
@@ -56,9 +56,11 @@ export const createShell = (config: MicrofrontendConfiguration, logger: Logger, 
     }
 
     const _render = (frontEnd:MicrofrontendModule) => () => {
+        logger.trace(`[shell] rendering frontend ${frontEnd.name}`)
         const { __mfeRegistration } = window as WindowExtended
         if (__mfeRegistration) {
             const frontEndRegObj = __mfeRegistration[`${frontEnd.name}Reg`]
+            logger.trace(`[shell] micro front end ${JSON.stringify(frontEndRegObj, null, '\t')}`)
             frontEndRegObj
                 .init(`${frontEnd.target}`, options, registerMiddleware)
                 .then(() => logger.info(`[shell] finish mounting '${frontEnd.name}'.`))
